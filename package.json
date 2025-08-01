@@ -1,0 +1,23 @@
+{
+  "name": "industrial-cv-ai",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build-wasm": "source ./emsdk/emsdk_env.sh && emcc src/cpp/main.cpp -s USE_WEBGPU=1 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -s MAXIMUM_MEMORY=4GB -s SIMD=1 -msimd128 -O3 --bind -o public/industrial_cv.js"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "@webgpu/types": "^0.1.40"
+  }
+}
